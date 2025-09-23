@@ -16,7 +16,7 @@ pipeline {
                 TARGET_DIR=/var/jenkins_home/standard-project/
 
                 # کپی کردن فایل‌ها
-                cp -r standard-project/* $TARGET_DIR/
+                cp -r Standard-Project/* $TARGET_DIR/
 
                 # تغییر دسترسی‌ها
                 # chown -R www-data:www-data $TARGET_DIR     #deleted
