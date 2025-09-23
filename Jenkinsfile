@@ -16,7 +16,7 @@ pipeline {
                 TARGET_DIR=/home/mysite
 
                 # کپی کردن فایل‌ها
-                cp -r website/* $TARGET_DIR/
+                cp -r Standard-Project/* $TARGET_DIR/
 
                 # تغییر دسترسی‌ها
                 # chown -R www-data:www-data $TARGET_DIR     #deleted
