@@ -15,10 +15,20 @@ const port = 3000;
 const SECRET_KEY = 'your_super_secret_key'; // یک کلید مخفی برای JWT
 
 // Middleware
+const allowedOrigins = [
+    // برای محیط توسعه (Development) و لوکال
+    'http://127.0.0.1:5500', 
+    'http://localhost:5500', 
+
+    // برای محیط عملیاتی (Production) و IP عمومی
+    'http://31.47.42.161', 
+
+    // اگر سرور فرانت‌اند روی پورت دیگری در محیط عملیاتی اجرا می‌شود
+    // 'http://31.47.42.161:PORT',
+];
 app.use(cors({
-    origin: 'http://127.0.0.1:5500', // آدرس کامل جایی که فایل HTML شما اجرا می‌شود
-    //origin: 'http://localhost:5500', // آدرس کامل جایی که فایل HTML شما اجرا می‌شود
-    credentials: true, // این خط برای ارسال و دریافت کوکی ضروری است
+    origin: allowedOrigins,
+    credentials: true,
 }));
 app.use(express.json());
 app.use(cookieParser());
